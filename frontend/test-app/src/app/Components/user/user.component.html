@@ -1,0 +1,20 @@
+<div class="container-fluid bg-light bg-gradient">
+    <a class="fw-bold fs-4 btn btn-outline-black mt-2" routerLink="/">&#8592; inicio</a>
+    <h2 class="fs-2  text-center">{{user.username}}</h2>
+    <hr>
+    <div class="container">
+        <div class="card shadow p-3 mb-5 bg-body rounded">
+            <div class="card-body">
+                <div *ngFor="let item of user | keyvalue">
+                    <p class="fw-semibold ">{{item.key}}: </p>
+                    <p  *ngIf="item.key != 'estatus'">{{item.value == null? 'sin informacion':item.value}}</p>
+                    <p *ngIf="item.key == 'estatus'" >
+                        {{item.value == 1? 'Activo': 'Inactivo'}}
+                    </p>
+                </div>
+                
+            </div>
+
+          </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container-fluid bg-secondary bg-gradient" style="--bs-bg-opacity: .5;height: 100vh; vertical-align: middle;">
+    <div class="row justify-content-md-center align-items-center">
+        <div class="col col-xs-12 col-md-6 mt-5">
+            <div class="card shadow p-3 mb-5 bg-body rounded">
+                <div class="card-body p-4 ">
+                    <form (submit)="ingresar()" type="post">
+                      <div class="mb-3">
+                        <label for="username" class="form-label ">Nombre de usuario</label>
+                        <input type="text" class="form-control" id="username" placeholder="Ingese su nombre de usuario"
+                        name="userName" 
+                        [(ngModel)]="userName" (change)="cambio()">
+                      </div>
+                      <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" placeholder="Ingrese las palabras secretas" 
+                        name="password" (change)="cambio()"
+                        [(ngModel)]="password">
+                      </div>
+                      <button type="submit" class="btn btn-primary text-right">Entrar</button>
+                    </form>
+                </div>
+              </div>
+        </div>
+        <div class="alert alert-danger text-center" role="alert" *ngIf="message !== ''">
+          {{message}}
+        </div>
+    </div>
+    
+</div>

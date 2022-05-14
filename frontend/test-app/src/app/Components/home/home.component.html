@@ -1,0 +1,42 @@
+
+<div class="bg-light bg-gradient container-fluid" >
+  
+
+  <button class="btn btn-outline-danger fs-4 mt-1" (click)="logout()">Logout &#x2715;</button>
+
+    <h2 class="text-center p-1"> Usuarios </h2>
+    <hr/>
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-outline-primary mx-5" type="button" routerLink="/nuevo">Nuevo usuario</button>
+    </div>
+    <p class="placeholder-glow" *ngIf="loading">
+        <span class="placeholder col-12"></span>
+      </p>
+    <div class="d-flex justify-content-center px-5 table-responsive" id="divUsers">
+        <table class="table mt-5" *ngIf="!loading">
+            <thead>
+              <tr class="table-dark">
+                <th scope="col">#</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Perfil</th>
+                <th scope="col">Telefono</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let user of users">
+                   <td>{{user.id}}</td>
+                   <td>{{user.correo}}</td>
+                   <td>{{user.perfil}}</td>
+                   <td>{{user.telefono}}</td>
+                   <td>
+                       <a class="btn btn-sm btn-info " routerLink="/user/{{user.id}}">info</a>
+                       <a class="btn btn-sm btn-warning mx-2" routerLink="/editar/{{user.id}}">Editar</a>
+                       <a class="btn btn-sm btn-danger " (click)="delete(user.id)">Eliminar</a>
+                   </td>
+               </tr>
+            </tbody>
+          </table>
+    </div>
+
+</div>

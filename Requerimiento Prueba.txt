@@ -1,0 +1,33 @@
+Puntos a evaluar:
+- Modulación
+- Reutilización
+- Orden
+- Simplicidad
+- Limpieza
+- MVC
+- REST
+- Bootstrap
+
+
+Realizar Frontend con Angular y Backend con NodeJs.
+
+Se entrega una base de datos la cual ya se puede exportar de nombre test.sql (MySQL).
+
+requerimiento (no utilizar platillas de diseño)
+
+1. Login de usuario centrado
+2. Lista de usuarios que muestre las siguientes columnas:
+	. username
+	. correo
+	. telefono
+	. acciones
+3. En la columna acciones poner las siguientes funciones
+	. Ver perfil (permite modificar la informacion del usuario, puede ser en un modal o bien en una pantalla aparte).
+	. Modificar usuario (De igual manera puede ser un modal o una pantalla aparte).
+	. Eliminar (eliminado logico) desde el perfil
+
+5. Botón de generar usuario (Abrira una ventana nueva o modal para generar un usuario nuevo).
+6. Eres libre de decidir que datos pueden ser modificables o no, cuales deberian ser mostrados en las pantallas o la lista.
+7. Esperamos una interface limpia simple y facil de utilizar 
+8. El backend se espera que sea ordenado y que se utilice buenas practicas de desarrollo
+9. Se espera que los campos de los formularios tengan validaciones para los tipos de datos, por ejemplo solo numeros para el télefono, contraseña oculta etc.

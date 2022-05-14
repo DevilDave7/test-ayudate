@@ -1,0 +1,53 @@
+<div class="container-fluid bg-light bg-gradient">
+    <a class="fw-bold fs-4 btn btn-outline-black mt-2" routerLink="/">&#8592; inicio</a>
+    <h2 class="fs-2  text-center">{{user.username || 'Nuevo registro'}}</h2>
+    <hr>
+    <div class="container">
+        <div class="card shadow p-3 mb-5 bg-body rounded">
+            <div class="card-body">
+                <form (submit)="guardar()" type="post">
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label ">Correo electronico:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Ingese su email"
+                        [ngModelOptions]="{standalone: true}" required #email="ngModel"
+                        [(ngModel)]="user.correo">
+                        <div class="alert alert-warning p-1" role="alert" *ngIf="email.invalid && (email.dirty || email.touched)">
+                            Este campo es obligatorio
+                            <div *ngIf="email.errors?.['required']">hola mundo</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3" *ngIf="user.id === 0">
+                        <label for="username" class="form-label ">Nombre de usuario:</label>
+                        <input type="text" class="form-control"  [ngModelOptions]="{standalone: true}" placeholder="Ingese un nombre se usuario"
+                        [(ngModel)]="user.username" #username="ngModel">
+                        <div class="alert alert-warning p-1" role="alert" *ngIf="username.invalid && (username.dirty || username.touched)">
+                            Este campo es obligatorio
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label ">Nueva contraseña:</label>
+                        <input type="password" class="form-control" id="password"  [ngModelOptions]="{standalone: true}" 
+                         placeholder="Ingese su contraseña" [(ngModel)]="user.password" required minlength="5" #password="ngModel">
+                         <div class="alert alert-warning p-1" role="alert" *ngIf="password.invalid && (password.dirty || password.touched)">
+                            Este campo es obligatorio y debe ser mayor a 5 caracteres
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label ">Telefono:</label>
+                        <input type="number" class="form-control" id="telefono" placeholder="Ingese su telefono"
+                        [ngModelOptions]="{standalone: true}" required minlength="10"
+                        [(ngModel)]="user.telefono" #telefono="ngModel">
+                        <div class="alert alert-warning p-1" role="alert" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
+                            Este campo es obligatorio 
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-block btn-primary">Guardar</button>
+                </form>
+            </div>
+
+          </div>
+    </div>
+</div>
