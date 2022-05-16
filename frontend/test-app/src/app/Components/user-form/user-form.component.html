@@ -14,7 +14,6 @@
                         [(ngModel)]="user.correo">
                         <div class="alert alert-warning p-1" role="alert" *ngIf="email.invalid && (email.dirty || email.touched)">
                             Este campo es obligatorio
-                            <div *ngIf="email.errors?.['required']">hola mundo</div>
                         </div>
                     </div>
 
